@@ -1,0 +1,23 @@
+<!-- templates/layout.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  <header>
+    <h1>✨ My Flask App</h1>
+    <nav>
+      <a href="/register">회원가입</a> |
+      <a href="/login">로그인</a> |
+      <a href="/profile">프로필</a>
+    </nav>
+    <hr>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
