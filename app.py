@@ -9,7 +9,11 @@ from datetime import timedelta
 import os 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL", "postgresql://postgres:mypassword@localhost:5432/flask_db")
+db_url = os.getenv("DATABASE_URL")
+if db_url and db_url.startswith("postgres://"):
+    db_url = db_url.replace("postgres://", "postgresql://", 1)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = db_url
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['JWT_SECRET_KEY'] = "my-super-secret"
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(minutes=15)
