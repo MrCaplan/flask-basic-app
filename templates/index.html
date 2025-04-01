@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Flask 폼 예제</title>
-  </head>
-  <body>
-    <h1>이름을 입력하세요</h1>
-    <form method="POST">
-      <input type="text" name="name" placeholder="당신의 이름은?" required />
-      <input type="text" name="age" placeholder="당신의 나이는?" required />
-      <button type="submit">전송</button>
-    </form>
-  </body>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flask + JWT 로그인</title>
+</head>
+<body>
+  <h1>JWT 로그인 테스트</h1>
+
+  <h2>회원가입</h2>
+  <input id="reg-username" placeholder="username" />
+  <input id="reg-password" type="password" placeholder="password" />
+  <input id="reg-name" placeholder="이름" />
+  <input id="reg-age" type="number" placeholder="나이" />
+  <button onclick="register()">회원가입</button>
+
+  <h2>로그인</h2>
+  <input id="login-username" placeholder="username" />
+  <input id="login-password" type="password" placeholder="password" />
+  <button onclick="login()">로그인</button>
+
+  <h2>프로필 조회</h2>
+  <button onclick="getProfile()">프로필 확인</button>
+  <p id="profile-result"></p>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
 </html>
