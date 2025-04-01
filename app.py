@@ -106,5 +106,10 @@ def refresh_token():
     new_access_token = create_access_token(identity=current_user)
     return jsonify(access_token=new_access_token), 200
 
+@app.route("/")
+def home():
+    return redirect("/login")
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
