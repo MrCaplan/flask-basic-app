@@ -69,8 +69,12 @@ def login():
 
         access_token = create_access_token(identity=user.username)
         refresh_token = create_refresh_token(identity=user.username)
-        return render_template("profile.html", current_user=user.username, token=access_token)
 
+        response = make_response(render_template("profile.html", current_user=user.username))
+        set_access_cookies(response, access_token)
+        set_refresh_cookies(response, refresh_token)
+        return response
+    
     return render_template("login.html")
 
 @app.route("/logout", methods=["POST"])
