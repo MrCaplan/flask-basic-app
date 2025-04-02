@@ -69,6 +69,16 @@ def login():
 
     return render_template("login.html")
 
+@app.route("/logout", methods=["POST"])
+@jwt_required()
+def logout():
+    response = make_response(redirect("/login"))
+    unset_jwt_cookies(response)
+    response.set_cookie("access_token", "", expires=0)
+    response.set_cookie("refresh_token", "", expires=0)
+    return response
+
+
 # 프로필 페이지
 @app.route("/profile")
 @jwt_required()
