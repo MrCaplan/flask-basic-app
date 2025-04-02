@@ -6,7 +6,10 @@
 <div class="bg-gray-50 p-4 rounded-lg shadow text-center">
   <p class="text-lg font-semibold text-gray-800">{{ current_user }}님 환영합니다 🎉</p>
 </div>
-<form action="/logout" method="post">
-  <button type="submit" class="btn btn-danger">로그아웃</button>
+<form action="/logout" method="post" class="mt-6 text-center">
+  <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded shadow">
+    로그아웃
+  </button>
 </form>
+
 {% endblock %}
