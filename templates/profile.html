@@ -1,11 +1,9 @@
-<!-- templates/profile.html -->
 {% extends "layout.html" %}
 {% block title %}프로필{% endblock %}
 {% block content %}
-<h2 class="text-2xl font-semibold mb-4">프로필</h2>
+<h2 class="text-2xl font-bold text-blue-700 mb-4 text-center">프로필</h2>
 
-<div class="bg-gray-100 p-4 rounded shadow">
-  <p class="text-lg"><span class="font-semibold">{{ current_user }}</span>님 환영합니다!</p>
+<div class="bg-gray-50 p-4 rounded-lg shadow text-center">
+  <p class="text-lg font-semibold text-gray-800">{{ current_user }}님 환영합니다 🎉</p>
 </div>
 {% endblock %}
-

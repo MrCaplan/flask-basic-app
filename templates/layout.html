@@ -1,24 +1,21 @@
-<!-- templates/layout.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>{% block title %}{% endblock %}</title>
-  <!-- Tailwind CSS CDN -->
+  <title>{% block title %}Flask App{% endblock %}</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>My Flask App</h1>
-    <nav>
-      <a href="/register">회원가입</a> |
-      <a href="/login">로그인</a> |
-      <a href="/profile">프로필</a>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-white shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-blue-600">✨ Flask 회원 시스템</h1>
+    <nav class="space-x-4">
+      <a href="/register" class="text-blue-600 hover:underline">회원가입</a>
+      <a href="/login" class="text-blue-600 hover:underline">로그인</a>
+      <a href="/profile" class="text-blue-600 hover:underline">프로필</a>
     </nav>
-    <hr>
   </header>
 
-  <main>
+  <main class="max-w-md mx-auto mt-10 bg-white p-6 rounded-lg shadow-md">
     {% block content %}{% endblock %}
   </main>
 </body>
