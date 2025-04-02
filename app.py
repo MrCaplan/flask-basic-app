@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, render_template, request, redirect, jsonify, make_response
 from models import db, User
 from flask_jwt_extended import (
     JWTManager, create_access_token, create_refresh_token,
